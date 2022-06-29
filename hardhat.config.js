@@ -1,6 +1,7 @@
 require("@nomiclabs/hardhat-waffle")
 require("@nomiclabs/hardhat-etherscan")
 require("dotenv").config()
+require("hardhat-gas-reporter")
 
 // tasks
 require("./tasks/block-number")
@@ -10,7 +11,9 @@ require("./tasks/block-number")
 
 const PRIVATE_KEY = process.env.PRIVATE_KEY
 const GOERLI_RPC_URL = process.env.GOERLI_RPC_URL
+
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY
+const COINMARKETCAP_API_KEY = process.env.COINMARKETCAP_API_KEY
 
 /**
  * @type import('hardhat/config').HardhatUserConfig
@@ -31,5 +34,13 @@ module.exports = {
   solidity: "0.8.8",
   etherscan: {
     apiKey: ETHERSCAN_API_KEY,
+  },
+  gasReporter: {
+    enabled: true,
+    outputFile: "gas-report.txt",
+    noColors: true,
+    currency: "USD",
+    coinmarketcap: COINMARKETCAP_API_KEY,
+    // token: "MATIC"
   },
 }
