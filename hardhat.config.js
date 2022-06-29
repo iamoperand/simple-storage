@@ -6,18 +6,12 @@ require("hardhat-gas-reporter")
 // tasks
 require("./tasks/block-number")
 
-// You need to export an object to set up your config
-// Go to https://hardhat.org/config/ to learn more
+const PRIVATE_KEY = process.env.PRIVATE_KEY || "https://eth-rinkeby"
+const GOERLI_RPC_URL = process.env.GOERLI_RPC_URL || "0xkey"
 
-const PRIVATE_KEY = process.env.PRIVATE_KEY
-const GOERLI_RPC_URL = process.env.GOERLI_RPC_URL
+const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY || "key"
+const COINMARKETCAP_API_KEY = process.env.COINMARKETCAP_API_KEY || "key"
 
-const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY
-const COINMARKETCAP_API_KEY = process.env.COINMARKETCAP_API_KEY
-
-/**
- * @type import('hardhat/config').HardhatUserConfig
- */
 module.exports = {
   defaultNetwork: "hardhat",
   networks: {
