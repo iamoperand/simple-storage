@@ -2,6 +2,7 @@ require("@nomiclabs/hardhat-waffle")
 require("@nomiclabs/hardhat-etherscan")
 require("dotenv").config()
 require("hardhat-gas-reporter")
+require("solidity-coverage")
 
 // tasks
 require("./tasks/block-number")
